@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Public Decks</title>
-    <link rel="stylesheet" href="public deck.css" />
-               <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
-            <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>User Profile</title>
+    <link rel="stylesheet" type="text/css" href="ash.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-
-<div class="container"> 
+<body>  
+  <div class="container"> 
   <div class="grid-container">   
 <div class="header-container">
     <!-- Search bar in the left -->
@@ -35,6 +31,7 @@
         <div class="user-info">
           <p style="font-size: 20px; font-weight: normal; ">@meiko</p>
         </div>
+
 <div class="dropdown">
   <button type="button" class="dropdown-btn" onclick="toggleDropdown()">
     <i class="bx bx-chevron-down"></i>
@@ -131,53 +128,88 @@
           </li>
       </ul>
   </nav>
-
 </aside>
-    <main class="main">
-        <div class="subject-search">
-            <input type="text" placeholder="Type a subject to explore public decks" />
-            <button></button>
-        </div>
 
 
-  <section class="cards">
-    <a href="../otherprevdekcs/otherprevdeck2.html" class="card purple"><h4>Information Assurance</h4><p>17 cards</p></a>
-    <a href="../otherprevdekcs/otherprevdeck3.html" class="card red"><h4>System Analysis And Design</h4><p>10 cards</p></a>
-    <a href="arduino-uno.html" class="card yellow"><h4>Arduino Uno Components</h4><p>27 cards</p></a>
-    <a href="social-engineering.html" class="card purple"><h4>Social Engineering</h4><p>33 cards</p></a>
-    <a href="information-assurance.html" class="card green"><h4>Information Assurance</h4><p>18 cards</p></a>
-    <a href="information-security.html" class="card yellow"><h4>Information Security</h4><p>26 cards</p></a>
-    <a href="robotics.html" class="card purple"><h4>Introduction to Robotics</h4><p>50 cards</p></a>
-    <a href="network-topologies.html" class="card blue"><h4>Computer Network Topologies</h4><p>37 cards</p></a>
-    <a href="types-of-networks.html" class="card purple"><h4>Types of Computer Networks</h4><p>29 cards</p></a>
-    <a href="emerging-tech.html" class="card red"><h4>Emerging Technology</h4><p>41 cards</p></a>
-    <a href="system-integration.html" class="card blue"><h4>System Integration</h4><p>69 cards</p></a>
-    <a href="mysql-subquery.html" class="card green"><h4>MySQL Subquery</h4><p>33 cards</p></a>
-</section>
 
-    </main>
+<main>
+    <div class="other-user-decks-container">
+        <div class="left-info">
+            <h1 class="section-title">Student ID Card</h1>
+            <div class="dashed-line"></div>
+            
+<div class="user-profile-info">
+    <p class="user-label">Username:</p>
+    <p class="user-value">Ashh</p>
+
+    <p class="user-label" style="margin-left: 110px;">Year:</p>
+    <p class="user-value">3rd Year</p>
 </div>
 
+<div class="user-profile-info">
+    <p class="user-label">School:</p>
+    <p class="user-value">Cavite State University Imus Campus</p>
+</div>
+
+<div class="signature-row">
+    <p class="signature-label">Signature:</p>
+    <h3 class="signature">Ashh</h3>
+</div>
+
+
+        <div class="profile-container">
+            <img src="../otherprevdekcs/image/ash.jpg" alt="Profile Picture" class="profile-picture">
+            <div class="barcode">
+        </div>
+    </div>
+</main>
+
+
+            
+ <section class="decks">
+  <h2>Public Decks</h2>
+
+  <div class="decks-grid">
+    <a href="../otherprevdekcs/otherprevdeck3.html" class="deck-link">
+      <div class="deck-card">
+        <div class="deck-tab"></div>
+        <div class="deck-info">
+          <p>System Analysis And Design
+</p>
+          <small class="custom-small">10 cards</small>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+
+</main>
+
+    </body>
+</html>
+
 <script>
-function toggleSidebar() {
-    document.querySelector('.sidebar').classList.toggle('open');
+function toggleDropdown() {
+    document.getElementById("dropdownMenu").classList.toggle("show");
 }
+
+// Optional: Close dropdown if user clicks outside
+window.onclick = function(event) {
+  if (!event.target.matches('.dropdown-btn') && !event.target.matches('.dropdown-btn *')) {
+    document.querySelectorAll(".dropdown-content").forEach(menu => {
+        menu.classList.remove("show");
+    });
+  }
+};
+
+const currentPage = window.location.pathname.split("/").pop();
+document.querySelectorAll(".sidebar .menu-item").forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+    }
+});
+
 </script>
 
-            <script>
-                function toggleDropdown() {
-                const menu = document.getElementById("dropdownMenu");
-                menu.classList.toggle("show");
-            }
-
-                document.addEventListener("click", function(e) {
-                const dropdown = document.querySelector(".dropdown");
-    
-            if (!dropdown.contains(e.target)) {
-                document.getElementById("dropdownMenu").classList.remove("show");
-            }
-            });
-            </script>
-
-</body>
-</html>

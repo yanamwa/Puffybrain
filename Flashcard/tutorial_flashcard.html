@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards Tutorial</title>
+    <link rel="stylesheet" href="tutorial_flashcards.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
+            <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <!-- HEADER CARD -->
+   <div class="header-wrapper">
+    <div class="header-top">
+        <h1>Flashcards</h1>
+    </div>
+
+    <div class="header-body">
+        <p>
+            Flip, learn, and master! <br>
+            Review facts and test your memory in a fun, quick, and easy way — perfect for learning on the go!
+        </p>
+        <a href="../Flashcard/flashcard.html"><button class="start-btn">Start</button></a>
+
+    </div>
+</div>
+
+
+    <!-- FLASHCARD CONTAINER -->
+    <div class="flashcard-wrapper">
+        <div class="tab">
+        <span id="tabLabel" class="active">Question</span>
+        <span onclick="flipCard()">Flip</span>
+        </div>
+
+
+        <div class="flashcard" id="flashcard">
+        <div class="flashcard-inner">
+        <!-- FRONT (Question) -->
+        <div class="flashcard-face front">
+            <p class="question">
+                Which keyword is used to prevent a class from being subclassed?
+            </p>
+        </div>
+
+        <!-- BACK (Answer) -->
+        <div class="flashcard-face back">
+            <p class="question">
+                final
+            </p>
+        </div>
+    </div>
+    <div class="difficulty">
+            <button class="easy">Easy</button>
+            <button class="good">Good</button>
+            <button class="hard">Hard</button>
+        </div>
+</div>
+    </div>
+
+
+       
+
+    <script>
+function flipCard() {
+    document.getElementById("flashcard").classList.toggle("flipped");
+}
+
+/* Optional: click card itself to flip */
+document.getElementById("flashcard").addEventListener("click", flipCard);
+</script>
+    <script>
+    const flashcard = document.getElementById("flashcard");
+    const tabLabel = document.getElementById("tabLabel");
+
+    function flipCard() {
+    flashcard.classList.toggle("flipped");
+
+    if (flashcard.classList.contains("flipped")) {
+        tabLabel.textContent = "Answer";
+    } else {
+        tabLabel.textContent = "Question";
+    }
+}
+
+    /* Optional: click card itself to flip */
+    flashcard.addEventListener("click", flipCard);
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="flashcard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+<!-- TOP INFO -->
+<div class="flashcard-info">
+    <h2 class="deck-title">Introduction to Programming</h2>
+
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <p class="question-count" id="questionCount">Question 1 of 3</p>
+</div>
+
+<!-- FLASHCARD CONTAINER -->
+<div class="flashcard-wrapper">
+    <div class="tab">
+        <span id="tabLabel" class="active">Question</span>
+        <span onclick="flipCard()">Flip</span>
+    </div>
+
+    <div class="flashcard" id="flashcard">
+        <div class="flashcard-inner">
+            <!-- FRONT -->
+            <div class="flashcard-face front">
+                <p class="question"></p>
+            </div>
+
+            <!-- BACK -->
+            <div class="flashcard-face back">
+                <p class="question"></p>
+            </div>
+        </div>
+
+        <!-- DIFFICULTY -->
+        <div class="difficulty">
+            <button class="easy" onclick="answerCard('easy')">Easy</button>
+            <button class="good" onclick="answerCard('good')">Good</button>
+            <button class="hard" onclick="answerCard('hard')">Hard</button>
+        </div>
+    </div>
+</div>
+
+<script>
+const flashcards = [
+    {
+        question: "What does JVM stand for?",
+        answer: "Java Virtual Machine"
+    },
+    {
+        question: "What is inheritance in Java?",
+        answer: "Inheritance allows one class to inherit fields and methods from another using the extends keyword."
+    },
+    {
+        question: "What is a package in Java?",
+        answer: "A package is a collection of related classes and interfaces."
+    }
+];
+
+let currentIndex = 0;
+let score = 0;
+const userResults = [];
+
+/* DOM ELEMENTS */
+const flashcard = document.getElementById("flashcard");
+const tabLabel = document.getElementById("tabLabel");
+const frontText = document.querySelector(".flashcard-face.front .question");
+const backText = document.querySelector(".flashcard-face.back .question");
+const questionCount = document.getElementById("questionCount");
+const progressFill = document.getElementById("progressFill");
+
+/* LOAD CARD */
+function loadCard(index) {
+    frontText.textContent = flashcards[index].question;
+    backText.textContent = flashcards[index].answer;
+
+    flashcard.classList.remove("flipped");
+    tabLabel.textContent = "Question";
+
+    questionCount.textContent = `Question ${index + 1} of ${flashcards.length}`;
+    progressFill.style.width = `${((index + 1) / flashcards.length) * 100}%`;
+}
+
+/* FLIP */
+function flipCard() {
+    flashcard.classList.toggle("flipped");
+    tabLabel.textContent = flashcard.classList.contains("flipped")
+        ? "Answer"
+        : "Question";
+}
+
+/* ANSWER LOGIC */
+function answerCard(difficulty) {
+    const isCorrect = difficulty === "easy" || difficulty === "good";
+
+    if (isCorrect) score++;
+
+    userResults.push({
+        question: flashcards[currentIndex].question,
+        answer: flashcards[currentIndex].answer,
+        correct: isCorrect
+    });
+
+    if (currentIndex < flashcards.length - 1) {
+        currentIndex++;
+        loadCard(currentIndex);
+    } else {
+        finishQuiz();
+    }
+}
+
+/* FINISH */
+function finishQuiz() {
+    localStorage.setItem("flashcardResults", JSON.stringify({
+        score: score,
+        total: flashcards.length,
+        answers: userResults
+    }));
+
+    window.location.href = "flash_result.html";
+}
+
+/* INIT */
+loadCard(currentIndex);
+</script>
+
+</body>
+</html>

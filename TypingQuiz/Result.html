@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Result</title>
+  <link rel="stylesheet" href="Result.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Jersey+15&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="result-container">
+    <div id="score-container">
+</div>
+
+<script>
+  const score = localStorage.getItem("score");
+  const total = 3;
+  document.getElementById("score-container").innerHTML = `You Scored ${score}/${total}<p>Keep Practicing!</p>`;
+</script>
+
+
+    <div id="buttons-container">
+    <button class="try-again" onclick="tryAgain()">Try Again</button>
+
+<script>
+function tryAgain() {
+    localStorage.removeItem("score");
+    window.location.href = "TypingQuiz.html";
+}
+</script>
+
+      <button class="go-home" onclick="window.location.href='index.html'">Go Home</button>
+    </div>
+
+    <!-- HEADER -->
+<div class="header-box">
+    <div class="header-top">
+        <h1 class="title" style="font-weight: normal;">Review the Answers</h1>
+    </div>
+
+  
+      <div class="review-item">
+        <strong>What is the primary purpose of a 'router' in a home network?</strong>
+        <p>To forward data between your home network and the internet.</p>
+      </div>
+
+      <div class="review-item">
+        <strong>Which network device is used to amplify a Wi-Fi signal to extend coverage?</strong>
+        <p>A Wi-Fi Repeater/Extender</p>
+      </div>
+
+      <div class="review-item">
+        <strong>What does the acronym 'LAN' commonly stand for?</strong>
+        <p>Local Area Network</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

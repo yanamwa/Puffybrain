@@ -1,0 +1,199 @@
+
+:root {
+    --color-primary: #EBD3FA;
+    --color-secondary: #E3AADD;
+    --color-third: #C8A8E9;
+    --color-fourth: #A993D8;
+    --color-fifth: #C3C7F3;
+    --font-color: #2F2F2F;
+    --card-color1: #C8BBD0;
+    --card-color2: #E0BBD4;
+     --card-color3: #C3C7F3;
+     --card-color4: #90F897;
+    --card-color5: #CF8686;
+     --card-color6: #EECB99;
+     --color-shadow: #DDDDDD;
+}
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  min-height: 100vh;
+
+  background: repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.05) 0px,
+      rgba(0,0,0,0.05) 1px,
+      transparent 1px,
+      transparent 30px
+  );
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('../images/notebook with stuff.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.60; 
+  z-index: -1;
+}
+
+.result-container {
+  width: 70%;
+  margin: 50px auto;
+  text-align: center;
+}
+
+#score-container {
+  padding: 25px 30px;
+  border-radius: 30px;
+  font-family: 'Jersey 15', sans-serif;
+  font-size: 45px;
+  color: #000;
+  display: inline-block;
+  min-width: 280px;
+  margin-top: 20px;
+  
+}
+
+#score-container p {
+  font-size: 20px;
+  margin-top: 8px;
+}
+
+#buttons-container {
+  margin-bottom: 30px;
+}
+
+#buttons-container button {
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 12px 25px;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+#buttons-container .try-again {
+    background: var(--color-primary);
+    color: var(--font-color);
+    border: none;
+    border-radius: 25px;
+
+    font-family: "Jersey 15", sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 0 var(--color-fourth);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+#buttons-container .try-again:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 var(--color-secondary);
+}
+
+
+#buttons-container .try-again:hover {
+  background-color: #e9caff;
+      transform: scale(1.05);
+
+}
+
+#buttons-container .go-home {
+    background: var(white);
+    color: rgb(70, 70, 70);
+    border: 1px solid;
+    border-radius: 25px;
+
+    font-family: "Jersey 15", sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 0 #adaaaa;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#buttons-container .go-home:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 var(--color-secondary);
+}
+
+
+#buttons-container .go-home:hover {
+  background-color: #f0e5ff;
+}
+
+#review-container {
+  background-color: #e9caff;
+  border-radius: 30px;
+  padding: 30px 35px;
+  color: #000;
+  font-family: 'Lato', sans-serif;
+  text-align: left;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+}
+
+#review-container h2 {
+  font-family: 'Jersey 15', sans-serif;
+  margin-bottom: 25px;
+}
+
+.header-box {
+    width: 70%;
+    margin: 60px auto 0;
+    background: #ffffff;
+    border-radius: 40px;
+    padding: 120px 30px 40px; 
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.12);
+    position: relative;
+    font-family: 'Jersey 15', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.header-top {
+    width: 100%;
+    height: 90px;
+    background: #e3c2ff;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.review-item {
+  background: #F5F5F5;
+  padding: 18px 22px;
+  margin-bottom: 18px;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+  font-size: 20px;
+  color: #333;
+  font-weight: normal;  
+  font-style: normal;    
+}
+
+.review-item strong {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 500;      
+  font-style: normal;
+  border-bottom: 1px solid #d6d6d6; 
+  padding-bottom: 8px;  
+}

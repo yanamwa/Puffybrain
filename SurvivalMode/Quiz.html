@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Network Fundamentals Quiz</title>
+
+  <link rel="stylesheet" href="Quiz.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Jersey+15&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="header">
+    <h1 class="title">Network Fundamentals</h1>
+    <div class="progress-container">
+    <div class="progress-bar" id="progress"></div>
+</div>
+
+
+    <p class="subtitle" id="counter">Question 1 of 3</p>
+  </div>
+  <div class="lives">
+    <img src="heart.png" class="heart" id="heart1">
+    <img src="heart.png" class="heart" id="heart2">
+    <img src="heart.png" class="heart" id="heart3">
+</div>
+
+</div>
+
+
+  <div class="question1">
+  <p class="question" id="question-text">Loading question...</p>
+
+  <!-- Multiple-choice options -->
+  <div class="options" id="options-container"></div>
+
+  <!-- Typing quiz input -->
+<div id="typing-container">
+  <input
+    type="text"
+    id="typing-answer"
+    placeholder="Type your answer"
+  >
+
+  <button id="submit-typing">
+    Submit
+  </button>
+</div>
+
+</div>
+
+
+  <script src="Script.js"></script>
+</body>
+</html>
+

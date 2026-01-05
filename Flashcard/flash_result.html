@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcards Result</title>
+<link rel="stylesheet" href="flash_result.css">
+<link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- SCORE -->
+<div class="score-section">
+    <h1>You Scored <span id="score">0</span>/<span id="total">0</span></h1>
+    <p class="subtitle" id="message">Don't give up! Try again!</p>
+
+    <div class="result-buttons">
+        <button class="retry" onclick="retryQuiz()">Try Again</button>
+        <button class="home" onclick="goHome()">Go Home</button>
+    </div>
+</div>
+
+<!-- REVIEW -->
+<div class="review-wrapper">
+    <div class="review-header">Review the Answers</div>
+
+    <div class="review-list" id="reviewList"></div>
+</div>
+
+<script>
+const results = JSON.parse(localStorage.getItem("flashcardResults"));
+
+document.getElementById("score").textContent = results.score;
+document.getElementById("total").textContent = results.total;
+
+// message text
+document.getElementById("message").textContent =
+    results.score === results.total ? "Great job!" : "Don't give up! Try again!";
+
+const reviewList = document.getElementById("reviewList");
+
+results.answers.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "review-item";
+
+    card.innerHTML = `
+        <div class="review-question">${item.question}</div>
+         <hr class="review-divider">
+        <div class="review-answer">${item.answer}</div>
+    `;
+
+    reviewList.appendChild(card);
+});
+
+function retryQuiz() {
+    localStorage.clear();
+    window.location.href = "flashcards.html";
+}
+
+function goHome() {
+    localStorage.clear();
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

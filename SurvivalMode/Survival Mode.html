@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survival Mode Quiz</title>
+    <link rel="stylesheet" href="Survival Mode.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Jersey+15&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header-box">
+    <div class="header-top">
+        <h1 class="title">Survival Mode</h1>
+    </div>
+
+    <div class="subtitles">
+        <p class="subtitle">3 lives, 1 mission — don’t lose them!</p>
+        <p class="subtitle">Each wrong answer costs a life. Stay focused, keep your streak going, and see how long you can survive!</p>
+    </div>
+
+    <button class="start-btn">Start</button>
+</div>
+
+
+<!-- SLIDESHOW -->
+<div class="slideshow-box">
+<div class="lives">
+    <img src="heart.png" class="heart" id="heart1">
+    <img src="heart.png" class="heart" id="heart2">
+    <img src="heart.png" class="heart" id="heart3">
+</div>
+    <!-- Slide 1 -->
+    <div class="slide active">
+        <p class="question">Which keyword is used to prevent a class from being subclassed?</p>
+        <div class="options">
+            <button>static</button>
+            <button>final</button>
+            <button>const</button>
+            <button>sealed</button>
+        </div>
+    </div>
+
+    <!-- Slide 2 (correct) -->
+    <div class="slide">
+        <p class="question">Which keyword is used to prevent a class from being subclassed?</p>
+        <div class="options">
+            <button class="correct">final</button>
+            <button>static</button>
+            <button>const</button>
+            <button>sealed</button>
+        </div>
+    </div>
+
+    <!-- Slide 3 (wrong) -->
+    <div class="slide">
+        <p class="question">Which keyword is used to prevent a class from being subclassed?</p>
+        <div class="options">
+            <button>final</button>
+            <button class="wrong">static</button>
+            <button>const</button>
+            <button>sealed</button>
+        </div>
+    </div>
+
+    <!-- Dots -->
+    <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+
+<script>
+let index = 0;
+let lives = 3;
+
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+const hearts = document.querySelectorAll(".heart");
+
+const checkedSlides = new Set();
+
+function showSlide(n) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === n);
+        dots[i].classList.toggle("active", i === n);
+    });
+
+    handleHeartLoss(slides[n], n);
+}
+
+function handleHeartLoss(slide, slideIndex) {
+    if (
+        slide.querySelector(".wrong") &&
+        !checkedSlides.has(slideIndex) &&
+        lives > 0
+    ) {
+        lives--;
+        checkedSlides.add(slideIndex);
+
+        const heart = hearts[lives];
+        if (heart) heart.classList.add("lost");
+    }
+}
+
+function nextSlide() {
+    index++;
+
+    if (index >= slides.length) {
+        index = 0;
+
+        lives = 3;
+        checkedSlides.clear();
+
+        hearts.forEach(heart => heart.classList.remove("lost"));
+    }
+
+    showSlide(index);
+}
+
+setInterval(nextSlide, 3500);
+
+document.querySelector(".start-btn").addEventListener("click", () => {
+    window.location.href = "Quiz.html";
+});
+</script>
+
+
+</body>
+</html>

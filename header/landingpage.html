@@ -9,6 +9,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">   
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
 
 <!--CSS-->
@@ -17,38 +19,32 @@
     <title>Welcome to PuffyBrain </title>
 </head>
 <body>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <div class="wrapper">
+        <section class="container">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+            <!-- FIXED: Background -->
+            <div class="background"></div>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="landing.css">
+            <!-- NAVBAR -->
+            <div class="navbar">
+                <div class="logo">
+                    <img src="../images/logo.png" alt="Logo">
+                </div>
 
-    <title>Welcome to PuffyBrain</title>
-</>
-<body>
-<div class="navbar">
-    <div class="logo">
-        <img src="../images/logo.png" alt="Logo">
-    </div>
+                <ul class="nav-links">
+                    <li><a href="../header/landingpage.html">Home</a></li>
+                    <li><a href="../header/About Us/AboutUs.html">About</a></li>
+                    <li><a href="../header/faq.html">FAQ</a></li>
+                </ul>
 
-    <ul class="nav-links">
-        <li><a href="../header/landingpage.html">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">FAQ</a></li>
-    </ul>
+                <div class="nav-actions">
+                    <button class="start-btn">Start Learning</button>
+                </div>
+            </div>
 
-    <div class="nav-actions">
-        <button class="start-btn">Start Learning</button>
-    </div>
-</div>
 
 <!-- HERO SECTION -->
 <section class="hero">
-
-    <img src="../user account/background.png" class="hero-bg">
 
     <div class="hero-content">
         <p class="study-secret">shhh… a study secret</p>
@@ -62,18 +58,16 @@
         </a>
     </div>
 
-<div class="cloud-container">
+
+        </section>
+    </div>
+
+    <div class="cloud-container">
     <img src="../images/clouds sa landing page.png" class="cloud-img">
 </div>
 
 <!-- NEW GRADIENT FADE -->
 <div class="cloud-bottom-fade"></div>
-
-</section> <!-- end of hero -->
-
-</section>
-
-
 
 <!-- FEATURES SECTION -->
 <section class="features">
@@ -104,10 +98,7 @@
             <p>Keep your study materials neatly grouped into decks. Review them anytime, anywhere—perfect for exam prep, daily practice, or brushing up on specific topics.</p>
         </div>
     </div>
-
 </section>
-
-
 
 <!-- LIBRARY BOTTOM -->
 <section class="library">
@@ -122,16 +113,25 @@
 
 
 <!-- FOOTER -->
-<footer>
-    <div class="links">
+    <footer class="footer">
+    <div class="footer-menu">
         <a href="#">About Us</a>
         <a href="#">Terms and Conditions</a>
         <a href="#">Privacy Policy</a>
         <a href="#">Contact Us</a>
     </div>
 
-    <p>© 2025 — PuffyBrain. All Rights Reserved.</p>
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="mailto:example@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+
 </footer>
+
+<div class="sub-footer">
+    <p>© 2025 – PuffyBrain All Rights Reserved</p>
+</div>
 
 </body>
 </html>

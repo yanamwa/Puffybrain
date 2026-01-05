@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timed Quiz</title>
+    <link rel="stylesheet" href="Timed.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Jersey+15&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header-box">
+    <div class="header-top">
+        <h1 class="title">Timed Mode</h1>
+    </div>
+
+    <div class="subtitles">
+        <p class="subtitle">  Beat the clock!</p>
+        <p class="subtitle">Answer as many questions as you can before time runs out. Think fast and stay sharp — every second counts!</p>
+    </div>
+
+    <button class="start-btn">Start</button>
+</div>
+
+
+
+
+<div class="slideshow-box">
+
+<div class="timer-box">
+    <div id="timer"> 2 : 00</div>
+</div>
+
+
+
+    <!-- Slide 1 -->
+    <div class="slide active">
+        <p class="question">Which of these is not an access modifier?</p>
+        <div class="options">
+            <button>Public</button>
+            <button>Private</button>
+            <button>Protected</button>
+            <button>Package</button>
+        </div>
+    </div>
+
+    <!-- Slide 2 (correct) -->
+    <div class="slide">
+        <p class="question">Which of these is not an access modifier?</p>
+        <div class="options">
+            <button class="correct">Protected</button>
+            <button>Private</button>
+            <button>Public</button>
+            <button>Package</button>
+        </div>
+    </div>
+
+    <!-- Slide 3 (wrong) -->
+    <div class="slide">
+        <p class="question">Which of these is not an access modifier?</p>
+        <div class="options">
+            <button>Protected</button>
+            <button class="wrong">Private</button>
+            <button>Public</button>
+            <button>Package</button>
+        </div>
+    </div>
+
+    <!-- Dots -->
+    <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+
+<script>
+
+
+    let time = 120;        
+    let direction = -3;   
+
+    const timerEl = document.getElementById("timer");
+
+    function updateTimer() {
+        let minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+
+        
+        timerEl.textContent = `${minutes} : ${seconds.toString().padStart(2, '0')}`;
+
+       
+        if (time === 118) direction = 1;   
+        if (time === 120) direction = -1;  
+
+        time += direction;
+    }
+
+    setInterval(updateTimer, 1000);
+
+let index = 0;
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+function showSlide(n) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === n);
+        dots[i].classList.toggle("active", i === n);
+    });
+}
+
+function nextSlide() {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+}
+
+setInterval(nextSlide, 3500);
+
+document.querySelector(".start-btn").addEventListener("click", () => {
+    window.location.href = "Quiz.html";
+});
+</script>
+
+</body>
+</html>

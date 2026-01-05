@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Profile</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+    <div class="grid-container">
+
+    <!-- header -->
+    <div class="header-container">
+
+    <!-- searchbar -->
+    <form action="#" method="get" class="search-bar">
+        <input type="text" name="search" placeholder="Search your deck title">
+        <i class="bx bx-search"></i>
+    </form>
+
+    <div class="center-box">
+        <h1>Hello, @meiko!</h1>
+        <p>What are we going to study?</p>
+    <img class="side-image" src="2.png" alt="Big Image">
+    </div>
+
+    <div class="center-box1">
+        <h1>My Decks</h1>
+        <div class="deck-buttons">
+<!-- -->
+
+<button class="btn btn-add" id="openPopup">
+  Add New Decks
+</button>
+<!-- ADD NEW DECK POPUP -->
+<div id="popup" class="popup">
+
+  <div class="header-box">
+
+    <!-- TOP HEADER -->
+ <div class="header-top">
+  <h1 class="title">Add Deck</h1>
+</div>
+
+
+    <!-- FORM -->
+    <form class="subtitle-form">
+
+      <!-- Deck title -->
+      <div class="form-group">
+        <label class="deckinfo">Deck Title</label>
+        <input type="text" class="decktitle" placeholder="Enter deck name">
+      </div>
+
+      <!-- Description -->
+      <div class="form-group">
+        <label class="deckinfo">Description</label>
+        <input type="text" class="decktitle" placeholder="Optional description">
+      </div>
+
+      <!-- Visibility -->
+      <div class="form-group">
+        <label class="deckinfo">Visibility</label>
+        <div class="radio-group">
+          <label class="pubpriv">
+            <input type="radio" name="visibility" value="public">
+            Public
+          </label>
+          <label class="pubpriv">
+            <input type="radio" name="visibility" value="private">
+            Private
+          </label>
+        </div>
+      </div>
+
+      <!-- Colors -->
+      <div class="form-group">
+        <label class="deckinfo">Deck Color</label>
+        <div class="color-options">
+          <input type="radio" name="deckcolor" class="button1" value="#C8BBD0">
+          <input type="radio" name="deckcolor" class="button2" value="#E0BBD4">
+          <input type="radio" name="deckcolor" class="button3" value="#C3C7F3">
+          <input type="radio" name="deckcolor" class="button4" value="#90F897">
+          <input type="radio" name="deckcolor" class="button5" value="#CF8686">
+          <input type="radio" name="deckcolor" class="button6" value="#EECB99">
+        </div>
+      </div>
+
+      <!-- ACTIONS -->
+      <div class="startsave-container">
+        <button type="button" id="closePopup" class="cancel-btn">Cancel</button>
+        <button type="button" id="addDeckBtn" class="start-btn">Add</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<button class="btn btn-show"
+        onclick="window.location.href='../User_Navigations/Mydecks.html'">
+  Show All
+</button>
+    </div>
+
+    <div class="decks-area inner-card">
+        <div class="decks-grid">
+
+<!-- Card 1 -->
+<a href="deck-details.php" class="deck-link">
+  <article class="deck-card" data-type="private">
+    <div class="card-top card-top--blue"></div>
+    <div class="card-body">
+      <p class="deck-title">Lesson 1 to 3 Networking</p>
+      <span class="deck-count">37 cards</span>
+    </div>
+  </article>
+</a>
+
+<!-- Card 2 -->
+<a href="deck-details.php" class="deck-link">
+  <article class="deck-card" data-type="shared">
+    <div class="card-top card-top--pink"></div>
+    <div class="card-body">
+      <p class="deck-title">Methods of research lesson 2</p>
+      <span class="deck-count">30 cards</span>
+    </div>
+  </article>
+</a>
+
+<!-- Card 3 -->
+<a href="deck-details.php" class="deck-link">
+  <article class="deck-card" data-type="shared">
+    <div class="card-top card-top--lav"></div>
+    <div class="card-body">
+      <p class="deck-title">Methods of research lesson 3</p>
+      <span class="deck-count">15 cards</span>
+    </div>
+  </article>
+</a>
+
+                </div>
+            </div>
+            
+            </div>
+
+            <!-- profile -->
+            <div class="profile-wrapper">
+
+                <div class="dp-container">
+                    <img src="..." alt="Profile Picture" class="profile-pic">
+                </div>
+
+                <div class="user-info">
+                    <p style="font-size: 20px;">@meiko</p>
+                </div>
+
+                <div class="dropdown">
+                    <button type="button" class="dropdown-btn" onclick="toggleDropdown()">
+                        <i class="bx bx-chevron-down"></i>
+                    </button>
+
+                    <div class="dropdown-content" id="dropdownMenu">
+                        <a href="#">
+                            <i class="bx bx-cog"></i>
+                            <span>Settings</span>
+                        </a>
+
+                        <a href="../user account/login.html">
+                            <i class="bx bx-log-out"></i>
+                            <span>Logout</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- right sidebar -->
+        <aside class="sidebar">
+
+        <div> <!-- logo -->
+        <div class="logo-container">
+        <div class="logo">
+            <img src="5.png" alt="Logo">
+            <span class="app-name">Puffybrain</span>
+        </div>
+        </div>
+    
+        <div class="divider"></div>
+        
+     <!-- Main Menu -->
+        <p class="my-decks">Menu</p>
+        <nav class="menu">
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="../User_Navigations/home.html" class="menu-item active">
+                        <i class="bx bx-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="../User_Navigations/Mydecks.html" class="menu-item">
+                        <i class="bx bx-book"></i>
+                        <span>Decks</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="../public deck/public deck.html" class="menu-item">
+                        <i class="bx bx-folder"></i>
+                        <span>Public Decks</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="divider"></div>
+
+        <!-- My Decks -->
+        <nav class="mydecks">
+            <p class="my-decks">My Decks</p>
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="../User Decks/modess.html">
+                        <i class="bx bx-book"></i>
+                        <span>Lesson 1 to 3 Networking</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="../User Decks/methods2.html">
+                        <i class="bx bx-book"></i>
+                        <span>Method of Research Lesson 2 </span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="../User Decks/methods3 copy.html">
+                        <i class="bx bx-book"></i>
+                        <span>Method of Research Lesson 3 </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- logout -->
+    <nav class="logout">
+        <ul class="sidebar-list">
+            <li class="sidebar-list-item">
+                <a href="../user account/login.html">
+                    <i class="bx bx-log-out"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</aside>
+
+</aside>
+
+        <!-- right sidebar -->
+        <aside class="right-sidebar">
+
+            <div class="profile-section">
+                <div class="profile-avatar"></div>
+                <h3 class="profile-name">@meiko</h3>
+                <p class="profile-role">2nd year</p>
+<a href="../setting profile/user_profile.html" class="profile-btn">
+  Profile
+</a>
+            </div>
+
+            <!-- realtime calendar -->
+            <div class="calendar-section">
+                <div class="calendar-header">
+                    <span></span>
+                </div>
+
+                <div class="calendar-grid"></div>
+            </div>
+
+            <!-- setting -->
+       <a href="../setting profile/setting profilee.html" class="settings-footer">
+  ⚙ Settings
+</a>
+
+
+        </aside>
+
+    </div>
+</div>
+
+<!-- realtime calendar -->
+<script>
+    
+function generateCalendar() {
+    const calendarGrid = document.querySelector(".calendar-grid");
+    const header = document.querySelector(".calendar-header span");
+
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth();
+
+    const monthName = today.toLocaleString("default", { month: "long" });
+    header.textContent = `${monthName} ${year}`;
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    calendarGrid.innerHTML =
+        `<span>SU</span><span>MO</span><span>TU</span><span>WE</span><span>TH</span><span>FR</span><span>SA</span>`;
+
+    for (let i = 0; i < firstDay; i++) {
+        calendarGrid.innerHTML += `<span></span>`;
+    }
+
+    for (let day = 1; day <= daysInMonth; day++) {
+        calendarGrid.innerHTML +=
+            day === today.getDate()
+                ? `<span class="active">${day}</span>`
+                : `<span>${day}</span>`;
+    }
+}
+
+generateCalendar();
+</script>
+
+<script>
+function toggleDropdown() {
+  document.getElementById("dropdownMenu").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-btn') && !event.target.matches('.dropdown-btn *')) {
+        document.querySelectorAll(".dropdown-content").forEach(menu => {
+            menu.classList.remove("show");
+        });
+    }
+};
+
+document.getElementById("openPopup").onclick = function () {
+    document.getElementById("popup").style.display = "flex";
+};
+
+document.getElementById("closePopup").onclick = function () {
+    document.getElementById("popup").style.display = "none";
+};
+
+document.getElementById("addDeckBtn").addEventListener("click", function () {
+
+    // CLOSE popup FIRST so it doesn't cover SweetAlert
+    document.getElementById("popup").style.display = "none";
+
+    Swal.fire({
+        title: "Deck Added!",
+        text: "Your new deck has been successfully added.",
+
+        imageUrl: "../images/success.png",
+        imageWidth: 170,
+        imageHeight: 170,
+
+        timer: 1100,
+        showConfirmButton: false,
+
+        customClass: {
+            popup: "my-popup",
+            confirmButton: "my-confirm-btn",
+            title: "my-title",
+            htmlContainer: "my-text",
+            image: "my-img"
+        }
+    });
+
+    // RESET form
+    document.querySelector(".subtitle-form").reset();
+});
+
+</script>
+
+</body>
+</html>

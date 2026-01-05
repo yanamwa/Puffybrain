@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  min-height: 100vh;
+
+  background: repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.05) 0px,
+      rgba(0,0,0,0.05) 1px,
+      transparent 1px,
+      transparent 30px
+  );
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('../images/notebook with stuff.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.60; 
+  z-index: -1;
+}
+
+.header {
+  width: 70%;
+  margin: 50px auto 0;
+  padding: 25px;
+  text-align: center;
+}
+
+.title {
+  font-family: 'Jersey 15', sans-serif;
+  font-size: 55px;
+  margin-bottom: 10px;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.progress-container {
+  width: 70%;
+  height: 12px;
+  background: #dcdcdc; 
+  border-radius: 10px;
+  margin: 10px auto 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #c9a2ff; 
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
+
+
+.subtitle {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.question-box {
+  width: 60%;
+  margin: 30px auto;
+  background: rgba(255,255,255,0.9);
+  border-radius: 25px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  border: 1px solid;
+  font-family: 'Poppins', sans-serif;
+}
+
+.question {
+  font-size: 32px;
+  font-weight: 400;
+  padding: 45px 25px; /* less vertical padding */
+  border-radius: 15px;
+  background: #fff;
+  border: 1px solid #7c3aed;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto 30px auto; /* top 0, bottom 30px */
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.placeholder{
+  padding:10px 20px; 
+  width:60%; 
+  height:50px;
+  font-size:18px; 
+  border-radius:15px; 
+  border: 2px solid #3182BC; 
+  margin-left: 250px;
+}
+.placeholder:focus{
+  outline:none;
+  border-color:#3182BC;
+  box-shadow: 0 0 5px #3182BC;
+}
+.typing-container{
+  height: 500px;
+}
+#typing-answer {
+  padding: 10px 20px;
+  width: 60%;
+  font-size: 18px;
+  border-radius: 15px;
+  border: 2px solid #505152;
+  outline: none;
+  transition: 0.3s;
+}
+
+/* WRONG answer */
+#typing-answer.wrong {
+  border-color: rgba(106, 4, 4, 0.701); /* 70% opacity */
+  background-color: rgba(255, 16, 16, 0.24); /* 40% opacity */
+
+}
+
+/* CORRECT answer */
+#typing-answer.correct {
+  border-color: #10ff20b3;   /* green – 70% opacity */
+background-color: rgba(42, 180, 52, 0.24); /* green – 24% opacity */
+
+}

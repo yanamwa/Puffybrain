@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - PuffyBrain</title>
+    <link rel="stylesheet" href="Contact-US.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Jersey+15&display=swap" rel="stylesheet">
+</head>
+
+
+<body class="bg">
+    <header class="header">
+    <div class="header-overlay">
+        <nav class="nav-box">
+            <div class="nav-left">
+                <img src="/images/logo.png" alt="Logo" class="logo-img">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="#" class="login-btn">Login</a>
+                <a href="#" class="start-btn">Start Learning</a>
+            </div>
+        </nav>
+         <div class="get-in-touch"> 
+                <h3>Contact Us</h3><br>
+                <h1>Get in touch with us. We're always happy to hear your</h1>
+                <h1>your suggestions.</h1><br>
+                <p>Have questions, suggestions, or feedback? We'd love to hear from you! Fill out the form below and our team</p>
+                <p>will get back to you as soon as possible.</p>
+            </div>
+            <div class="socials">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="mailto:example@gmail.com"><i class="fa-brands fa-twitter"></i></a>
+    </div>
+</header>
+
+
+    <section class="contact-section">
+<form class="contact-form" id="contactForm">
+            <div class="form">
+<div class="contact-row">
+  <div class="contact-field">
+    <label for="name">Name</label><br>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+  </div>
+
+  <div class="contact-field">
+    <label for="email">Email</label><br>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+  </div>
+</div>
+<br>
+            <label for="message">Message</label><br>
+            <textarea id="message" name="message" placeholder="Enter your message" required></textarea><br>
+</div>
+            <input type="submit" class="submit-btn" value="Submit">
+        </form> 
+    </section>
+
+   <section class="questions-container">
+    <div class="contact-left">
+        <p>Contact Info</p>
+        <h1>We are always happy to assist</h1>
+        <h1>you</h1>
+    </div>
+
+    <div class="contact-right">
+        <h2>Email Address</h2>
+        <hr>
+        <h2>puffybrain.contactus@gmail.com</h2>
+
+        <h3>Assistance hours:</h3>
+        <p>Monday - Friday 6 am to</p>
+        <p>8 pm EST</p>
+    </div>
+</section>
+
+
+    <footer class="footer">
+    <div class="footer-menu">
+        <a href="#">About Us</a>
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Contact Us</a>
+    </div>
+
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="mailto:example@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+
+</footer>
+
+<div class="sub-footer">
+    <p>© 2025 – PuffyBrain All Rights Reserved</p>
+</div>
+
+<script>
+    document.querySelectorAll(".faq-box").forEach(box => {
+        box.addEventListener("click", () => {
+            box.classList.toggle("active");
+        });
+    });
+
+     document.getElementById("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault(); 
+        Swal.fire({
+            title: "Message Sent!",
+            text: "Thank you for reaching out. We’ll get back to you soon 💌",
+                   imageUrl: "/images/3.png",
+            confirmButtonText: "Okay",
+            confirmButtonColor: "#E3AADD",
+        imageWidth: 200,
+        imageHeight: 200,
+        customClass: {
+            popup: "my-popup",
+            confirmButton: "my-confirm-btn",
+            title: "my-title",
+            htmlContainer: "my-text",
+            image: "my-img"
+        },
+        });
+
+        this.reset();
+    });
+</script>
+
+
+</body>
+</html>

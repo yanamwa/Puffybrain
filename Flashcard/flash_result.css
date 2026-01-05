@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+    font-family: "Jersey 15", sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; 
+}
+
+body {
+    background: repeating-linear-gradient(
+        #f7f7f7,
+        #f7f7f7 24px,
+        #e5e5e5 25px
+    );
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* SCORE SECTION */
+.score-section h1 {
+    font-size: 30px;
+}
+
+.subtitle {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.result-buttons {
+    margin: 20px 0 30px;
+}
+
+.result-buttons button {
+    padding: 8px 22px;
+    border-radius: 25px;
+    border: none;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.retry {
+    background: #e6b7ff;
+    box-shadow: 2px 4px 0 #c8a8e9;
+}
+
+.home {
+    background: #fff;
+    border: 1px solid #aaa;
+    box-shadow: 2px 4px 0 #ddd;
+}
+
+/* REVIEW CARD */
+.review-wrapper {
+    max-width: 750px;
+    margin: auto;
+    border-radius: 30px;
+    overflow: hidden;
+    background: #fff;
+    height: calc(100vh - 220px);
+}
+
+.review-header {
+    background: #e6c9ff;
+    padding: 18px;
+    font-size: 18px;
+}
+
+.review-list {
+    padding: 25px;
+}
+
+/* REVIEW ITEMS */
+.review-item {
+    background: #f6f6f6;
+    border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 18px;
+}
+
+.review-question {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+.review-answer {
+    font-size: 15px;
+    font-weight: normal;
+}

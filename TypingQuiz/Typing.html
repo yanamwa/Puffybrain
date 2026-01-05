@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing quiz</title>
+    <link rel="stylesheet" href="Typing.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Jersey+15&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header-box">
+    <div class="header-top">
+        <h1 class="title">Q&A</h1>
+    </div>
+
+    <div class="subtitles">
+        <p class="subtitle">Ask, Answer, and explore!</p>
+        <p class="subtitle">Challenge your brain with interesting questions and discover something new every time you play!</p>
+    </div>
+
+    <button class="start-btn">Start</button>
+</div>
+
+<!-- SLIDESHOW -->
+<div class="slideshow-box">
+
+    <!-- Slide 1 -->
+     
+    <div class="slide active">
+        <p class="question">What is the primary purpose of a "Router" in a home network?</p>
+         <input 
+        type="text" 
+        class="placeholder"
+        id="answer"
+        placeholder="Type your answer and press Enter"
+        autocomplete="off"
+        onkeydown="handleEnter(event)">
+
+    <p id="result"></p>
+</div>
+
+    <!-- Slide 2 (correct) -->
+    <div class="slide">
+        <p class="question">Which network device is used to amplify a Wi-Fi signal to extend the coverage area of a wireless network?</p>
+         <input 
+        type="text" 
+        class="placeholder"
+        id="answer"
+        placeholder="Type your answer and press Enter"
+        autocomplete="off"
+        onkeydown="handleEnter(event)">
+
+    <p id="result"></p>
+</div>
+
+    <!-- Slide 3 (wrong) -->
+
+ <div class="slide">
+    <p class="question">What does the acronym "LAN" commonly stand for?</p>
+
+    <input 
+        type="text" 
+        class="placeholder"
+        id="answer"
+        placeholder="Type your answer and press Enter"
+        autocomplete="off"
+        onkeydown="handleEnter(event)"
+    >
+
+    <p id="result"></p>
+</div>
+    <!-- Dots -->
+    <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+<script>
+let index = 0;
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+// Colors to cycle through
+const colors = [
+  { bg: "rgba(255, 16, 16, 0.24)", border: "rgba(83, 9, 9, 0.7)" }, // red
+  { bg: "rgba(42, 180, 52, 0.24)", border: "rgba(16, 255, 32, 0.7)" } // green
+];
+
+let colorIndex = 0;
+let flashInterval;
+
+function showSlide(n) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === n);
+        dots[i].classList.toggle("active", i === n);
+    });
+    
+    const input = slides[n].querySelector("input[type=text]");
+    if (input) {
+        // Stop previous color cycling
+        clearInterval(flashInterval);
+        colorIndex = 0;
+
+        // Start slower color cycle
+        flashInterval = setInterval(() => {
+            const color = colors[colorIndex];
+            input.style.backgroundColor = color.bg;
+            input.style.borderColor = color.border;
+            colorIndex = (colorIndex + 1) % colors.length;
+        }, 1900); // 2 seconds per color (slower)
+    }
+}
+
+function nextSlide() {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+}
+
+// rotate slides every 4 seconds
+setInterval(nextSlide, 5500);
+
+// initialize first slide
+showSlide(index);
+
+document.querySelector(".start-btn").addEventListener("click", () => {
+    window.location.href = "TypingQuiz.html";
+});
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

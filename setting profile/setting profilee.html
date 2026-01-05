@@ -10,8 +10,11 @@
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
             <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-     </head>
-    <title>Edit Profile</title>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+   
+        </head>
+    <title>Edit Profile About you</title>
     
 </head>
 <body>
@@ -42,17 +45,17 @@
   </button>
 
   <div class="dropdown-content" id="dropdownMenu">
-    <a href="#">
+    <a href="../setting profile/settings.html">
       <i class="bx bx-cog"></i>
       <span>Settings</span>
     </a>
 
-    <a href="#">
+    <a href="../header/faq.html">
       <i class="bx bx-help-circle"></i>
       <span>FAQs</span>
     </a>
 
-    <a href="logout.php">
+    <a href="../user account/login.html">
       <i class="bx bx-log-out"></i>
       <span>Logout</span>
     </a>
@@ -73,21 +76,21 @@
       <nav class="menu">
           <ul class="sidebar-list">
               <li class="sidebar-list-item">
-                  <a href="sellerdashboard.php" class="menu-item">
+                  <a href="../User_Navigations/home.html" class="menu-item">
                       <i class="bx bx-home"></i>
                       <span>Home</span>
                   </a>
               </li>
 
               <li class="sidebar-list-item">
-                  <a href="sellershop.php" class="menu-item">
+                  <a href="../User_Navigations/Mydecks.html" class="menu-item">
                       <i class="bx bx-book"></i>
                       <span>Decks</span>
                   </a>
               </li>
 
               <li class="sidebar-list-item">
-                  <a href="sellerproductss.php" class="menu-item">
+                  <a href="../public deck/public deck.html" class="menu-item active">
                       <i class="bx bx-folder"></i>
                       <span>Public Decks</span>
                   </a>
@@ -95,30 +98,37 @@
           </ul>
       </nav>
 
-      <nav class="mydecks">
-          <p class="my-decks">My Decks</p>
-          <ul class="sidebar-list">
-              <li class="sidebar-list-item">
-                  <a href="">
-                      <i class="bx bx-book"></i>
-                      <span>My Deck 1</span>
-                  </a>
-              </li>
-              <li class="sidebar-list-item">
-                  <a href="">
-                      <i class="bx bx-book"></i>
-                      <span>My Deck 2</span>
-                  </a>
-              </li>
-          </ul>
-      </nav>
+  <!-- My Decks -->
+        <nav class="mydecks">
+            <p class="my-decks">My Decks</p>
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="../User Decks/modess.html">
+                        <i class="bx bx-book"></i>
+                        <span>Lesson 1 to 3 Networking</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="../User Decks/methods2.html">
+                        <i class="bx bx-book"></i>
+                        <span>Method of Research Lesson 2 </span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="../User Decks/methods3 copy.html">
+                        <i class="bx bx-book"></i>
+                        <span>Method of Research Lesson 3 </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
   </div>
 
   <!-- Bottom logout -->
   <nav class="logout">
       <ul class="sidebar-list">
           <li class="sidebar-list-item">
-              <a href="logout.php" class="menu-item">
+              <a href="../user account/login.html" class="menu-item">
                   <i class="bx bx-log-out"></i>
                   <span>Logout</span>
               </a>
@@ -155,39 +165,47 @@
             <div class="frame-10">
                 <div class="text-wrapper-7">About you</div>
                 <div class="rectangle-4"></div>
+<div class="edit-row">
 
-                <div class="user-input">
+    <div class="user-input">
+<div class="input-group">
+    <label>Username</label>
+    <div class="password-wrapper">
+        <input type="text" id="username" placeholder="Enter your new username">
+    </div>
+</div>
 
-                    <div class="input-group">
-                        <label>Username</label>
-                        <div class="password-wrapper">
-                            <input type="username" id="newUsername" placeholder="Enter your new username">
-                        </div>
-                    </div>
-                    
-                          <div class="input-group">
-                        <label>Email Adrewss</label>
-                        <div class="password-wrapper">
-                            <input type="username" id="newUsername" placeholder="Enter your new email address">
-                        </div>
-                    </div>
-                          <div class="input-group">
-                        <label>Name of School</label>
-                        <div class="password-wrapper">
-                            <input type="username" id="newUsername" placeholder="Enter your name of school">
-                        </div>
-                    </div>
+<div class="input-group">
+    <label>Email Address</label>
+    <div class="password-wrapper">
+        <input type="email" id="email" placeholder="Enter your new email address">
+    </div>
+</div>
 
-                           <div class="input-group">
-                        <label>Year Level</label>
-                        <div class="password-wrapper">
-                            <input type="year" id="newyear" placeholder="Enter your school year">
-                        </div>
-                    </div>
+<div class="input-group">
+    <label>Name of School</label>
+    <div class="password-wrapper">
+        <input type="text" id="school" placeholder="Enter your school name">
+    </div>
+</div>
+
+<div class="input-group">
+    <label>Year Level</label>
+    <div class="password-wrapper">
+        <input type="text" id="yearLevel" placeholder="Enter your year level">
+    </div>
+</div>
 
                     
       <!-- Right Column - Photo Upload -->
                         <div class="photo-section">
+                            <label class="photo-label">
+              <button class="start-btn">Save Changes</button>
+                        </div>
+                    </div>
+
+       <div class="nav-actions">
+                <div class="photo-section">
                             <label class="photo-label">
                                 <div id="photoContainer" class="photo-container">
                                     <div class="photo-icon-wrapper">
@@ -210,17 +228,15 @@
                             </p>
                         </div>
                     </div>
-
-
-                    <div class="nav-actions">
-                        <button class="start-btn">Save Changes</button>
-                    </div>
                 </div>
+</div>
 
       </div>
       <div class="text-wrapper-14">Edit Profile</div>
-      <div class="text-wrapper-15">Settings</div>
-      <div class="rectangle-8"></div>
+
+      <div class="text-wrapper-15 clickable">Settings</div>
+
+      <div class="rectangle-8 clickable"></div>
     </div>
 
 
@@ -228,85 +244,92 @@
     <!-- JAVASCRIPT -->
     <!-- ============================================ -->
     <script>
-        // Get elements
-        const personalTab = document.getElementById('personalTab');
-        const settingsTab = document.getElementById('settingsTab');
-        const personalContent = document.getElementById('personalContent');
-        const settingsContent = document.getElementById('settingsContent');
-        const photoUpload = document.getElementById('photoUpload');
-        const photoContainer = document.getElementById('photoContainer');
-        const saveButton = document.getElementById('saveButton');
+        document.querySelectorAll('.clickable').forEach(btn => {
+    btn.addEventListener('click', function() {
+        window.location.href = "settings.html";
+    });
+});
 
-        // Tab switching function
-        function switchTab(tab) {
-            if (tab === 'personal') {
-                // Activate Personal Information tab
-                personalTab.classList.add('tab-active');
-                settingsTab.classList.remove('tab-active');
-                personalContent.style.display = 'flex';
-                settingsContent.style.display = 'none';
-            } else {
-                // Activate Settings tab
-                settingsTab.classList.add('tab-active');
-                personalTab.classList.remove('tab-active');
-                settingsContent.style.display = 'block';
-                personalContent.style.display = 'none';
-            }
+// DROPDOWN
+function toggleDropdown() {
+    document.getElementById("dropdownMenu").classList.toggle("show");
+}
+
+document.addEventListener("click", function(e) {
+    const dropdown = document.querySelector(".dropdown");
+    if (!dropdown.contains(e.target)) {
+        document.getElementById("dropdownMenu").classList.remove("show");
+    }
+});
+
+// PASSWORD TOGGLE FUNCTION
+function setupToggle(toggleId, inputId) {
+    const toggle = document.getElementById(toggleId);
+    const input = document.getElementById(inputId);
+
+    toggle.addEventListener("click", function () {
+        input.type = input.type === "password" ? "text" : "password";
+        toggle.classList.toggle("fa-eye");
+        toggle.classList.toggle("fa-eye-slash");
+    });
+}
+
+// PHOTO PREVIEW
+const photoUpload = document.getElementById("photoUpload");
+const photoContainer = document.getElementById("photoContainer");
+
+photoUpload.addEventListener("change", function(event) {
+    const file = event.target.files[0];
+
+    if (!file) return;
+
+    // check file size
+    if (file.size > 5 * 1024 * 1024) {
+        Swal.fire({
+            icon: "error",
+            title: "File too large!",
+            text: "File must be less than 5MB"
+        });
+        event.target.value = "";
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+
+        photoContainer.innerHTML = `
+            <img src="${e.target.result}" 
+                 style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+        `;
+    };
+
+    reader.readAsDataURL(file);
+});
+
+// SAVE BUTTON
+const saveBtn = document.querySelector(".start-btn");
+
+saveBtn.addEventListener("click", function(e){
+    e.preventDefault();
+
+    Swal.fire({
+        title: "Profile Updated!",
+        text: "Your changes has been saved.",
+        imageUrl: "../images/success.png",
+        imageWidth: 200,
+        imageHeight: 200,
+        timer: 1500,
+        showConfirmButton: false,
+        customClass: {
+            popup: "my-popup",
+            confirmButton: "my-confirm-btn",
+            cancelButton: "my-cancel-btn",
+            title: "my-title",
+            htmlContainer: "my-text"
         }
-
-        // Add click event listeners to tabs
-        personalTab.addEventListener('click', function() {
-            switchTab('personal');
-        });
-
-        settingsTab.addEventListener('click', function() {
-            switchTab('settings');
-        });
-
-        // Photo upload function
-        photoUpload.addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            if (file) {
-                // Check file size (5MB limit)
-                if (file.size > 5 * 1024 * 1024) {
-                    alert('File size must be less than 5MB');
-                    event.target.value = '';
-                    return;
-                }
-
-                // Read and display the image
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    photoContainer.innerHTML = '<img src="' + e.target.result + '" alt="Profile Photo" />';
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-
-        // Save changes function
-        saveButton.addEventListener('click', function() {
-            // Get form data
-            const formData = {
-                username: document.getElementById('username').value,
-                email: document.getElementById('email').value,
-                school: document.getElementById('school').value,
-                yearLevel: document.getElementById('yearLevel').value
-            };
-            
-            // Log to console (for debugging)
-            console.log('Saving changes:', formData);
-            
-            // Show success message
-            alert('Changes saved successfully!');
-            
-            // Here you can add code to send data to your server
-            // Example:
-            // fetch('/api/save-profile', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify(formData)
-            // });
-        });
+    });
+});
     </script>
 </body>
 </html>

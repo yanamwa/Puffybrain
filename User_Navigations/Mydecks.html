@@ -1,0 +1,387 @@
+<!Doctype html>
+ <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <title>My decks</title>
+            <link rel="stylesheet" href="Mydecks.css">
+            <link rel="stylesheet" type="text/css" href="addnewdecks2.css">
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
+            <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    
+        </head>
+            <body>
+<div class="container"> 
+  <div class="grid-container">   
+<div class="header-container">
+    <!-- Search bar in the left -->
+    <form action="#" method="get" class="search-bar">
+        <input type="text" name="search" placeholder="Search your decks">
+        <i class="bx bx-search"></i>    
+    </form>
+
+
+      <!-- Profile section on the right -->
+      <div class="profile-wrapper">
+
+        <div class="dp-container">
+          <img src="../images/temporary profile.jpg" alt="Profile Picture" class="profile-pic">
+        </div>
+
+        <div class="user-info">
+          <p style="font-size: 20px; font-weight: normal; ">@meiko</p>
+        </div>
+
+<div class="dropdown">
+  <button type="button" class="dropdown-btn" onclick="toggleDropdown()">
+    <i class="bx bx-chevron-down"></i>
+  </button>
+
+  <div class="dropdown-content" id="dropdownMenu">
+    <a href="../setting profile/settings.html">
+      <i class="bx bx-cog"></i>
+      <span>Settings</span>
+    </a>
+
+    <a href="../header/faq.html">
+      <i class="bx bx-help-circle"></i>
+      <span>FAQs</span>
+    </a>
+
+    <a href="../user account/login.html">
+      <i class="bx bx-log-out"></i>
+      <span>Logout</span>
+    </a>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+<aside class="sidebar">
+
+  <div>
+      <div class="logo">
+          <img src="../images/logo.png" alt="Logo">
+      </div>
+          <p class="my-decks">Menu</p>
+
+      <nav class="menu">
+          <ul class="sidebar-list">
+              <li class="sidebar-list-item">
+                  <a href="../User_Navigations/home.html" class="menu-item">
+                      <i class="bx bx-home"></i>
+                      <span>Home</span>
+                  </a>
+              </li>
+
+              <li class="sidebar-list-item">
+                  <a href="../User_Navigations/Mydecks.html" class="menu-item active">
+                      <i class="bx bx-book"></i>
+                      <span>Decks</span>
+                  </a>
+              </li>
+
+              <li class="sidebar-list-item">
+                  <a href="../public deck/public deck.html" class="menu-item">
+                      <i class="bx bx-folder"></i>
+                      <span>Public Decks</span>
+                  </a>
+              </li>
+          </ul>
+      </nav>
+
+  <!-- My Decks -->
+        <nav class="mydecks">
+            <p class="my-decks">My Decks</p>
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="../User Decks/modess.html">
+                        <i class="bx bx-book"></i>
+                        <span>Lesson 1 to 3 Networking</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="../User Decks/methods2.html">
+                        <i class="bx bx-book"></i>
+                        <span>Method of Research Lesson 2 </span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="../User Decks/methods3 copy.html">
+                        <i class="bx bx-book"></i>
+                        <span>Method of Research Lesson 3 </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+  </div>
+
+  <!-- Bottom logout -->
+  <nav class="logout">
+      <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+              <a href="../user account/login.html" class="menu-item">
+                  <i class="bx bx-log-out"></i>
+                  <span>Logout</span>
+              </a>
+          </li>
+      </ul>
+  </nav>
+
+</aside>
+
+<main class="main">
+
+  <!-- ===== HEADER PANEL ===== -->
+<div class="wrapper header-wrapper">
+
+    <div class="purple-strip"></div>
+
+    <div class="header-card">
+        <h1>My Decks</h1>
+        <div class="actions">
+
+<button class="btn-outline" id="openPopup">
+  Add New Decks
+</button>
+  <div id="popup" class="popup">
+            <div class="header-box">
+    <div class="header-top">
+        <h1 class="title">Add Decks</h1>
+    </div>
+    <div class="subtitles">
+        <form action="#" method="get" class="subtitle-form">
+            <label for="deckinfo" class="deckinfo">Deck Title:</label>
+            <input type="text" class="decktitle" placeholder="  Enter your deck name"><br>
+            <label for="deckinfo" class="deckinfo">Description:</label>
+            <input type="text" class="decktitle" placeholder="  Enter your description deck - optional"><br>
+            <label for="deckinfo" class="deckinfo">Visibility:</label><br>
+            <div class="radio-group">
+            <input type="radio" id="public" class="value" name="visibility" value="public">
+            <label for="public" class="pubpriv">Public</label>
+            <input type="radio" id="private" class="value" name="visibility" value="private">
+            <label for="private" class="pubpriv">Private</label><br>
+            </div><br>
+            <label for="colordecks" class="deckinfo">Choose Deck Color:</label><br>
+            <div class="color-options"> 
+                <div class="color-option" style="background-color: #FF5733;"></div>
+                <input type="radio" class="button1" id="color1" name="deckcolor" value="#C8BBD0">
+                <input type="radio" class="button2" id="color2" name="deckcolor" value="#33FF57">
+                <input type="radio" class="button3" id="color2" name="deckcolor" value="#33FF57">
+                <input type="radio" class="button4" id="color2" name="deckcolor" value="#33FF57">
+                <input type="radio" class="button5" id="color2" name="deckcolor" value="#33FF57">
+                <input type="radio" class="button6" id="color2" name="deckcolor" value="#33FF57">
+            </div>
+            <br>
+            <div class="startsave-container">
+     <button type="button" id="closePopup" class="cancel-btn">Cancel</button>
+<button type="button" class="start-btn" id="addDeckBtn">Add</button>
+
+    </div>
+            </div>
+        </form> 
+    </div>
+        </div>
+    </div>
+</div>
+
+  <!-- ===== DECKS PANEL ===== -->
+<div class="content-wrapper">
+
+    <div class="filter-tab">
+   <button
+  type="button"
+  class="filter-pill filter-btn"
+  style="
+  font-family: 'Jersey 15', sans-serif; 
+  font-weight: normal;
+  font-style: normal;
+  font-size: 15px;"
+>
+     Filter
+</button>
+
+    </div>
+
+    <div class="deck-area">
+
+    <div class="deck-area">
+
+<article class="deck deck-card blue" data-type="private"
+         onclick="openDeck('../User Decks/modess.html')">
+    <div class="deck-top"></div>
+    <div class="deck-body">
+        <h4>Lesson 1 to 3 Networking</h4>
+        <span>37 cards</span>
+    </div>
+</article>
+
+<article class="deck deck-card pink" data-type="shared"
+         onclick="openDeck('../User Decks/methods2.html')">
+    <div class="deck-top"></div>
+    <div class="deck-body">
+        <h4>Methods of research lesson 2</h4>
+        <span>30 cards</span>
+    </div>
+</article>
+
+<article class="deck deck-card violet" data-type="shared"
+         onclick="openDeck('../User Decks/methods3 copy.html')">
+    <div class="deck-top"></div>
+    <div class="deck-body">
+        <h4>Methods of research lesson 3</h4>
+        <span>15 cards</span>
+    </div>
+</article>
+
+<article class="deck deck-card red" data-type="private"
+         onclick="openDeck('../User Decks/DeckInsideWithoutCard.html')">
+    <div class="deck-top"></div>
+    <div class="deck-body">
+        <h4>Business Analysis Lesson 1</h4>
+        <span>0 cards</span>
+    </div>
+</article>
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="filterPopup" class="filter-popup hidden">
+            <div class="header-box">
+
+    <div class="header-top">
+        <h1 class="title">Filter</h1>
+    </div>
+
+    <div class="filter-options">
+        <label class="filter-option">
+            <input type="radio" name="deckType" value="private">
+            Private
+        </label>
+
+        <label class="filter-option">
+            <input type="radio" name="deckType" value="shared">
+            Shared
+        </label>
+    </div>
+
+    <div class="filter-buttons">
+        <button id="resetFilter" class="reset-btn">Reset</button>
+        <button id="applyFilter" class="apply-btn">Apply</button>
+    </div>
+</div>
+<script>
+// OPEN FILTER POPUP
+document.querySelector(".filter-btn").addEventListener("click", () => {
+    document.getElementById("filterPopup").classList.remove("hidden");
+});
+
+// DECK FILTER LOGIC
+document.getElementById("applyFilter").addEventListener("click", () => {
+    const selected = document.querySelector("input[name='deckType']:checked");
+    const decks = document.querySelectorAll(".deck-card");
+
+    decks.forEach(deck => {
+        const isPrivate = deck.dataset.type === "private";
+        const isShared = deck.dataset.type === "shared";
+
+        if (!selected) {
+            deck.style.display = "block";
+            return;
+        }
+
+        if (selected.value === "private" && isPrivate) {
+            deck.style.display = "block";
+        } else if (selected.value === "shared" && isShared) {
+            deck.style.display = "block";
+        } else {
+            deck.style.display = "none";
+        }
+    });
+
+    document.getElementById("filterPopup").classList.add("hidden");
+});
+
+// RESET FILTER
+document.getElementById("resetFilter").addEventListener("click", () => {
+    document.querySelectorAll(".deck-card").forEach(deck => {
+        deck.style.display = "block";
+    });
+    document.getElementById("filterPopup").classList.add("hidden");
+});
+
+function openDeck(url) {
+    if (!url) return;
+    window.location.href = url;
+}
+
+function toggleDropdown() {
+    document.getElementById("dropdownMenu").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-btn') && !event.target.matches('.dropdown-btn *')) {
+        document.querySelectorAll(".dropdown-content").forEach(menu => {
+            menu.classList.remove("show");
+        });
+    }
+};
+
+document.getElementById("openPopup").onclick = function () {
+    document.getElementById("popup").style.display = "flex";
+};
+
+document.getElementById("closePopup").onclick = function () {
+    document.getElementById("popup").style.display = "none";
+};
+
+document.getElementById("addDeckBtn").addEventListener("click", function () {
+
+    // CLOSE popup FIRST so it doesn't cover SweetAlert
+    document.getElementById("popup").style.display = "none";
+
+    Swal.fire({
+        title: "Deck Added!",
+        text: "Your new deck has been successfully added.",
+
+        imageUrl: "../images/success.png",
+        imageWidth: 170,
+        imageHeight: 170,
+
+        timer: 1100,
+        showConfirmButton: false,
+
+        customClass: {
+            popup: "my-popup",
+            confirmButton: "my-confirm-btn",
+            title: "my-title",
+            htmlContainer: "my-text",
+            image: "my-img"
+        }
+    });
+
+    // RESET form
+    document.querySelector(".subtitle-form").reset();
+});
+
+</script>
+
+        
+    </body> 
+</html>
